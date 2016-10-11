@@ -30,7 +30,6 @@ void Board::initEncoded(std::string filePath){
 			std::cout << "map loading failed... coudln't load " << filePath;
 		}
 		while(std::getline(file, line)){
-			std::cout << line;
 			finalString += line;
 		}
 
@@ -53,15 +52,14 @@ void Board::take(std::string stream){
 		for(int j = 0; j < height; j++){
 			index = (i * 10) + j;
 
-			board[counter][index % 20] = stream.c_str()[index];
+			board[index % 20][counter] = stream.c_str()[index];
 			std::cout << stream.c_str()[index] << " added to board[" << counter << "][" << index%20 << "]\n";
-			
-			if(index % 20 == 0){
+	
+			if(index % 20 == 0 && i > 0){
 				counter++;
 			}
 		}
 	}
-
 
 }
 
@@ -89,14 +87,16 @@ void Board::run(bool checkForInput){
 
 
 void Board::draw(){
+	std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 	
-	
-	for(int i = 0; i < width; i++){
-		for(int j = 0; j < height; j++){
-			std::cout<<board[i][j];
+	for(int i = 0; i < height; i++){
+		for(int j = 0; j < width; j++){
+			std::cout<<board[j][i];
 		}
 		std::cout<<"\n";
 	}
+	int i = 0;
+	
 
 
 }
