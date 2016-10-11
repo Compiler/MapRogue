@@ -47,9 +47,18 @@ void Board::initEncoded(std::string filePath){
 
 
 void Board::take(std::string stream){
+	int index = 0;
+	int counter = 0;
 	for(int i = 0; i < width; i++){
 		for(int j = 0; j < height; j++){
-			std::cout << (i * 10) + j << "th index\n";
+			index = (i * 10) + j;
+
+			board[counter][index % 20] = stream.c_str()[index];
+			std::cout << stream.c_str()[index] << " added to board[" << counter << "][" << index%20 << "]\n";
+			
+			if(index % 20 == 0){
+				counter++;
+			}
 		}
 	}
 
