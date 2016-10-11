@@ -66,10 +66,40 @@ void Board::take(std::string stream){
 }
 
 
-void Board::run(){
+void Board::run(bool checkForInput){
+
+	if(checkForInput){
+		while(true){
+			char input;
+			draw();
+			std::cin >> input;
+		}
+		
+	} else{
+		
+		while(true){
+			
+			draw();
+			
+		}
+
+	}
 
 }
 
+
+void Board::draw(){
+	
+	
+	for(int i = 0; i < width; i++){
+		for(int j = 0; j < height; j++){
+			std::cout<<board[i][j];
+		}
+		std::cout<<"\n";
+	}
+
+
+}
 
 
 Board::~Board(){

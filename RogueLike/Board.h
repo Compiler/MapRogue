@@ -9,7 +9,7 @@ public:
 
 	void initFull(std::string filePath = "^");
 	void initEncoded(std::string filePath = "^");
-	void run();
+	void run(bool checkForInput);
 
 	~Board();
 
@@ -18,6 +18,7 @@ private:
 
 
 	void take(std::string stream);
+	void draw();
 
 	int width = 20;
 	int height = 10;
