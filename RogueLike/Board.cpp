@@ -49,7 +49,7 @@ void Board::initEncoded(std::string filePath){
 void Board::take(std::string stream){
 	for(int i = 0; i < width; i++){
 		for(int j = 0; j < height; j++){
-			board[i][j] = '_';
+			std::cout << (i * 10) + j << "th index\n";
 		}
 	}
 
