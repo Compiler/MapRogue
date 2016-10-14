@@ -3,6 +3,7 @@
 #include "fstream"
 #include "vector"
 #include "Sector.h"
+#include "Decoder.h"
 
 Loader::Loader(){
 }
@@ -37,7 +38,7 @@ void Loader::decode(std::string& stream){
 	//loop through for key elements of parenthesis
 	for(int i = 0; i < tmp.size(); i++){
 		if(tmp.c_str()[i] == '('){
-			tmpSec.beginning = i;
+			tmpSec.beginning = i+1;
 		}
 		if(tmp.c_str()[i] == ')'){
 			tmpSec.ending = i;
@@ -51,6 +52,8 @@ void Loader::decode(std::string& stream){
 	for(int i = 0; i < sectors.size(); i++){
 		std::cout << i << "- " << sectors[i].beginning << " to " << sectors[i].ending << "\n";
 	}
+
+	Decoder::decode(sectors, stream);
 
 
 

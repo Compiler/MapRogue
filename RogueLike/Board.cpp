@@ -31,7 +31,7 @@ void Board::take(std::string stream){
 			index = (i * 10) + j;
 
 			board[index % 20][counter] = stream.c_str()[index];
-			std::cout << stream.c_str()[index] << " added to board[" << counter << "][" << index%20 << "]\n";
+			//std::cout << stream.c_str()[index] << " added to board[" << counter << "][" << index%20 << "]\n";
 	
 			if(index % 20 == 0 && i > 0){
 				counter++;

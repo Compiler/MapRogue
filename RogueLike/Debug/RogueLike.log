@@ -1,15 +1,6 @@
 ﻿  Loader.cpp
-c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(38): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(51): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(57): error C2664: 'void Loader::rewire(std::vector<std::string,std::allocator<_Ty>> &,std::vector<Sector,std::allocator<Sector>>)': cannot convert argument 1 from 'std::string' to 'std::vector<std::string,std::allocator<_Ty>> &'
-          with
-          [
-              _Ty=std::string
-          ]
-c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(64): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
-  Board.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\decoder.h(14): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(52): warning C4018: '<': signed/unsigned mismatch
+  RogueLike.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\RogueLike\Debug\RogueLike.exe
+  RogueLike.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\RogueLike\Debug\RogueLike.pdb (Partial PDB)
