@@ -119,6 +119,7 @@
     <ClInclude Include="Decoder.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Sector.h" />
+    <ClInclude Include="StringEncode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
