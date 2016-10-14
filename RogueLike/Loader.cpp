@@ -48,33 +48,31 @@ void Loader::decode(std::string contents, std::string& stream){
 	int end = 0;
 	std::vector<std::string> strings;
 	std::string tmp ="";
+	int indexb[10] = {0,0,0,0,0,0,0,0,0,0};
+	int indexe[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	for(int i = 0; i < contents.size(); i++){
+		//std::cout << contents.c_str()[i];
 		if(contents.c_str()[i] == '('){
-			beg = i;
+			indexb[beg] = i;
 		}
 		if(contents.c_str()[i] == ')'){
-			end = i;
-			for(int k = 1; k < end - beg; k++){
-				tmp += contents.c_str()[k];
-			}
-			strings.push_back(tmp);
-			tmp = "";
-			
+			indexe[beg] = i;
+			beg++;
 		}
 
 
 	}
 
 
-	rewire(strings, stream);
+	//rewire(strings, stream);
 
 
 
 }
 
 void Loader::rewire(std::vector<std::string>& stream, std::string consc){
-	for(int i = 0; i < stream.size(); i++)
-		std::cout << stream[i] << "\n";
+	//for(int i = 0; i < stream.size(); i++)
+	//	std::cout << stream[i] << "\n";
 
 }
 
