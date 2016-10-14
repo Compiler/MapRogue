@@ -1,4 +1,7 @@
 ﻿  Loader.cpp
-c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(52): warning C4101: 'indexb': unreferenced local variable
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(53): warning C4101: 'indexe': unreferenced local variable
   RogueLike.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\RogueLike\Debug\RogueLike.exe
   RogueLike.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\RogueLike\Debug\RogueLike.pdb (Partial PDB)

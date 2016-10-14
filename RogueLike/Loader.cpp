@@ -2,6 +2,7 @@
 #include "iostream"
 #include "fstream"
 #include "vector"
+#include "Sector.h"
 
 Loader::Loader(){
 }
@@ -44,35 +45,39 @@ void Loader::loadStand(std::string filePath, std::string& stream){
 }
 
 void Loader::decode(std::string contents, std::string& stream){
-	int beg = 0;
-	int end = 0;
 	std::vector<std::string> strings;
-	std::string tmp ="";
-	int indexb[10] = {0,0,0,0,0,0,0,0,0,0};
-	int indexe[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+	std::vector<Sector> sectors;
+	Sector tmpSec;
+
 	for(int i = 0; i < contents.size(); i++){
 		//std::cout << contents.c_str()[i];
 		if(contents.c_str()[i] == '('){
-			indexb[beg] = i;
+			tmpSec.beginning = i;
 		}
 		if(contents.c_str()[i] == ')'){
-			indexe[beg] = i;
-			beg++;
+			tmpSec.ending = i;
+			sectors.push_back(tmpSec);
 		}
 
 
 	}
 
 
-	//rewire(strings, stream);
+	for(int i = 0; i < sectors.size(); i++){
+		std::cout << i << "- " << sectors[i].beginning << " to " << sectors[i].ending << "\n";
+	}
+
+
+	rewire(strings, stream);
 
 
 
 }
 
 void Loader::rewire(std::vector<std::string>& stream, std::string consc){
-	//for(int i = 0; i < stream.size(); i++)
-	//	std::cout << stream[i] << "\n";
+	for(int i = 0; i < stream.size(); i++)
+		std::cout << stream[i] << "\n";
 
 }
 
