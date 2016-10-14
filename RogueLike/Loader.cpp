@@ -8,9 +8,7 @@ Loader::Loader(){
 }
 
 
-void Loader::loadFull(std::string filePath, std::string& stream){
-
-
+void Loader::load(std::string filePath, std::string& stream, bool encoded){
 	std::cout << "Loading map...\n\n\n";
 	std::ifstream file("MapLocation//" + filePath);
 	std::string line, finalString;
@@ -23,24 +21,9 @@ void Loader::loadFull(std::string filePath, std::string& stream){
 	}
 
 	stream = finalString;
+	if(encoded)
+		decode(finalString, stream);
 
-
-}
-void Loader::loadStand(std::string filePath, std::string& stream){
-	
-	std::cout << "Loading map...\n\n\n";
-	std::ifstream file("MapLocation//" + filePath);
-	std::string line, finalString;
-
-	if(file.fail()){
-		std::cout << "map loading failed... coudln't load " << filePath;
-	}
-	while(std::getline(file, line)){
-		finalString += line;
-	}
-
-	stream = finalString;
-	decode(finalString, stream);
 
 }
 
@@ -50,8 +33,9 @@ void Loader::decode(std::string contents, std::string& stream){
 	std::vector<Sector> sectors;
 	Sector tmpSec;
 
+
+	//loop through for key elements of parenthesis
 	for(int i = 0; i < contents.size(); i++){
-		//std::cout << contents.c_str()[i];
 		if(contents.c_str()[i] == '('){
 			tmpSec.beginning = i;
 		}
@@ -67,6 +51,7 @@ void Loader::decode(std::string contents, std::string& stream){
 	for(int i = 0; i < sectors.size(); i++){
 		std::cout << i << "- " << sectors[i].beginning << " to " << sectors[i].ending << "\n";
 	}
+
 
 
 	rewire(strings, stream);

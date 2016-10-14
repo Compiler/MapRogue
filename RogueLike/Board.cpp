@@ -11,13 +11,13 @@ Board::Board(){
 void Board::initFull(std::string filePath){
 
 	std::string stream;
-	loader.loadFull(filePath, stream);
+	loader.load(filePath, stream, false);
 	take(stream);
 }
 
 void Board::initEncoded(std::string filePath){
 	std::string stream;
-	loader.loadStand(filePath, stream);
+	loader.load(filePath, stream, true);
 	take(stream);
 
 }

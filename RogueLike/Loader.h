@@ -6,10 +6,7 @@ class Loader{
 public:
 	Loader();
 
-
-	void loadFull(std::string filePath, std::string& stream);
-	void loadStand(std::string filePath, std::string& stream);
-
+	void load(std::string filePath, std::string& stream, bool encoded);
 
 	~Loader();
 
