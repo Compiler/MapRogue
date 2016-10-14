@@ -66,9 +66,15 @@ void Loader::decode(std::string contents, std::string& stream){
 	}
 
 
-	std::cout << strings[0] << "\n";
+	rewire(strings, stream);
 
 
+
+}
+
+void Loader::rewire(std::vector<std::string>& stream, std::string consc){
+	for(int i = 0; i < stream.size(); i++)
+		std::cout << stream[i] << "\n";
 
 }
 
