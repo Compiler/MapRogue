@@ -1,3 +1,4 @@
-﻿  Board.cpp
+﻿  Loader.cpp
+c:\users\user\documents\visual studio 2015\projects\roguelike\roguelike\loader.cpp(51): warning C4018: '<': signed/unsigned mismatch
   RogueLike.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\RogueLike\Debug\RogueLike.exe
   RogueLike.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Projects\RogueLike\Debug\RogueLike.pdb (Partial PDB)

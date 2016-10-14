@@ -1,7 +1,7 @@
 #include "Loader.h"
 #include "iostream"
 #include "fstream"
-
+#include "vector"
 
 Loader::Loader(){
 }
@@ -46,18 +46,27 @@ void Loader::loadStand(std::string filePath, std::string& stream){
 void Loader::decode(std::string contents, std::string& stream){
 	int beg = 0;
 	int end = 0;
+	std::vector<std::string> strings;
+	std::string tmp ="";
 	for(int i = 0; i < contents.size(); i++){
 		if(contents.c_str()[i] == '('){
 			beg = i;
-			std::cout << i;
 		}
 		if(contents.c_str()[i] == ')'){
 			end = i;
-			for(int k = 0; k < end - beg; k++)
-				std::cout << contents.c_str()[k] << "-";
+			for(int k = 1; k < end - beg; k++){
+				tmp += contents.c_str()[k];
+			}
+			strings.push_back(tmp);
+			tmp = "";
+			
 		}
 
+
 	}
+
+
+	std::cout << strings[0] << "\n";
 
 
 
