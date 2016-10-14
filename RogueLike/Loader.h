@@ -12,5 +12,9 @@ public:
 
 
 	~Loader();
+
+
+private:
+	void decode(std::string contents, std::string& stream);
 };
 
