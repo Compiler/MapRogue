@@ -2,6 +2,7 @@
 #include "fstream"
 
 
+
 Board::Board(){
 }
 
@@ -9,6 +10,9 @@ Board::Board(){
 
 void Board::initFull(std::string filePath){
 
+	std::string stream;
+	loader.loadFull(filePath, stream);
+	take(stream);
 }
 
 void Board::initEncoded(std::string filePath){

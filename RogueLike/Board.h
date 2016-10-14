@@ -2,6 +2,7 @@
 
 #include "iostream"
 #include "string"
+#include "Loader.h"
 
 class Board{
 public:
@@ -23,6 +24,8 @@ private:
 	int width = 20;
 	int height = 10;
 	char board[20][10];
+
+	Loader loader;
 	
 };
 
