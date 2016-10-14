@@ -5,7 +5,7 @@
 int main(){
 	Board board;
 
-	board.initFull("map.txt");
+	board.initEncoded("mapEnc.txt");
 	board.run(true);
 
 	char tmpVar;

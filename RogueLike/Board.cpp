@@ -16,7 +16,9 @@ void Board::initFull(std::string filePath){
 }
 
 void Board::initEncoded(std::string filePath){
-
+	std::string stream;
+	loader.loadStand(filePath, stream);
+	take(stream);
 
 }
 

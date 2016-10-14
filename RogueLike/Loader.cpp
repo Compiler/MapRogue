@@ -39,13 +39,32 @@ void Loader::loadStand(std::string filePath, std::string& stream){
 	}
 
 	stream = finalString;
+	decode(finalString, stream);
 
 }
 
 void Loader::decode(std::string contents, std::string& stream){
+	int beg = 0;
+	int end = 0;
+	for(int i = 0; i < contents.size(); i++){
+		if(contents.c_str()[i] == '('){
+			beg = i;
+			std::cout << i;
+		}
+		if(contents.c_str()[i] == ')'){
+			end = i;
+			for(int k = 0; k < end - beg; k++)
+				std::cout << contents.c_str()[k] << "-";
+		}
+
+	}
+
 
 
 }
 
 Loader::~Loader(){
+
+
+
 }
