@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Decoder.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Sector.h" />
   </ItemGroup>

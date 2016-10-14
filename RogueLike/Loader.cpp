@@ -22,24 +22,24 @@ void Loader::load(std::string filePath, std::string& stream, bool encoded){
 
 	stream = finalString;
 	if(encoded)
-		decode(finalString, stream);
+		decode(stream);
 
 
 }
 
-void Loader::decode(std::string contents, std::string& stream){
-	std::vector<std::string> strings;
-
+void Loader::decode(std::string& stream){
+	
+	std::string tmp = stream;
 	std::vector<Sector> sectors;
 	Sector tmpSec;
 
 
 	//loop through for key elements of parenthesis
-	for(int i = 0; i < contents.size(); i++){
-		if(contents.c_str()[i] == '('){
+	for(int i = 0; i < tmp.size(); i++){
+		if(tmp.c_str()[i] == '('){
 			tmpSec.beginning = i;
 		}
-		if(contents.c_str()[i] == ')'){
+		if(tmp.c_str()[i] == ')'){
 			tmpSec.ending = i;
 			sectors.push_back(tmpSec);
 		}
@@ -54,17 +54,10 @@ void Loader::decode(std::string contents, std::string& stream){
 
 
 
-	rewire(strings, stream);
-
 
 
 }
 
-void Loader::rewire(std::vector<std::string>& stream, std::string consc){
-	for(int i = 0; i < stream.size(); i++)
-		std::cout << stream[i] << "\n";
-
-}
 
 Loader::~Loader(){
 
