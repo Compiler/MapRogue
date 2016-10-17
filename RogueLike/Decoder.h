@@ -32,8 +32,6 @@ public:
 			for(int k = 0; k < pieces[i].amount; k++)
 				finalString += pieces[i].key;
 
-	//	bool tra = !stream.empty() && stream.find_first_not_of("0123456789") == std::string::npos;
-
 		stream = finalString;
 	}
 

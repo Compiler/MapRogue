@@ -7,14 +7,18 @@ Board::Board(){
 }
 
 
-
+/*
+	Calls full loader
+*/
 void Board::initFull(std::string filePath){
 
 	std::string stream;
 	loader.load(filePath, stream, false);
 	take(stream);
 }
-
+/*
+	Calls the decoder loader
+*/
 void Board::initEncoded(std::string filePath){
 	std::string stream;
 	loader.load(filePath, stream, true);
@@ -22,7 +26,9 @@ void Board::initEncoded(std::string filePath){
 
 }
 
-
+/*
+	Converts a stream of text to a 2d array
+*/
 void Board::take(std::string stream){
 	int index = 0;
 	int counter = 0;
@@ -31,7 +37,6 @@ void Board::take(std::string stream){
 			index = (i * 10) + j;
 
 			board[index % 20][counter] = stream.c_str()[index];
-			//std::cout << stream.c_str()[index] << " added to board[" << counter << "][" << index%20 << "]\n";
 	
 			if(index % 20 == 0 && i > 0){
 				counter++;
@@ -41,7 +46,10 @@ void Board::take(std::string stream){
 
 }
 
-
+/*
+	Convenience method to act as the entrance point to the rest of
+	the application
+*/
 void Board::run(bool checkForInput){
 
 	if(checkForInput){
@@ -63,7 +71,9 @@ void Board::run(bool checkForInput){
 
 }
 
-
+/*
+	Draws the board followed by a ton of next lines
+*/
 void Board::draw(){
 	std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 	

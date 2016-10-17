@@ -8,7 +8,9 @@
 Loader::Loader(){
 }
 
-
+/*
+	Loads the information and populates a string object
+*/
 void Loader::load(std::string filePath, std::string& stream, bool encoded){
 	std::cout << "Loading map...\n\n\n";
 	std::ifstream file("MapLocation//" + filePath);
@@ -27,7 +29,9 @@ void Loader::load(std::string filePath, std::string& stream, bool encoded){
 
 
 }
-
+/*
+	Decodes the correct encoded standards in the example
+*/
 void Loader::decode(std::string& stream){
 	
 	std::string tmp = stream;
